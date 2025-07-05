@@ -9,10 +9,13 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.core.mail import send_mail
 from django.conf import settings
+from drf_yasg.utils import swagger_auto_schema
 import jwt
 
 
 # Register
+
+@swagger_auto_schema(method='post', request_body=RegisterSerializer)
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def register_view(request):
@@ -43,6 +46,7 @@ def verify_email(request):
 
 
 # Login
+@swagger_auto_schema(method='post', request_body=LoginSerializer)
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def login_view(request):
@@ -80,6 +84,7 @@ def logout_view(request):
 
 
 # Forgot Password
+@swagger_auto_schema(method='post', request_body=PasswordResetSerializer)
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def forgot_password(request):
@@ -105,6 +110,8 @@ def forgot_password(request):
 
 
 # Reset Confirm
+
+@swagger_auto_schema(method='post', request_body=PasswordResetConfirmSerializer)
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def reset_password_confirm(request):
@@ -127,6 +134,8 @@ def reset_password_confirm(request):
 
 
 # Change Password
+
+@swagger_auto_schema(method='post', request_body=ChangePasswordSerializer)
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def change_password(request):

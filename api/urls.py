@@ -9,4 +9,5 @@ urlpatterns = [
     path('forgot-password/', userauth_view.forgot_password),
     path('reset-password-confirm/', userauth_view.reset_password_confirm),
     path('change-password/', userauth_view.change_password),
+    
 ]
