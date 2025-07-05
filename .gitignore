@@ -1,0 +1,61 @@
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment folder (adjust if yours আলাদা)
+env/
+venv/
+ENV/
+.venv/
+
+# Django migrations (optional, তবে অনেকেই রাখতে পছন্দ করে)
+*/migrations/*.py
+*/migrations/*.pyc
+!*/migrations/__init__.py
+
+# Database files
+db.sqlite3
+
+# Media files (user-uploaded)
+media/
+
+# Static files (collected static files)
+staticfiles/
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs and reports
+*.log
+*.pot
+*.pyc
+
+# Environment variables file
+.env
+
+# Coverage reports
+htmlcov/
+.coverage
+*.cover
+*.py,cover
+
+# Django stuff:
+local_settings.py
+
+# Pytest cache
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+
+# celery beat schedule file
+celerybeat-schedule
+
+# Docker
+*.dockerignore
+Dockerfile
+docker-compose.yml
